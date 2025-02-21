@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Html/profiles.html">Profiles</a></li>
+            <li><a href="../Html/help.html">HELP</a></li>
+            <li><a href="../Html/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+
+
+        <!-- Chat Button -->
+        <button class="chat-btn" onclick="toggleChat()">Chat with Us</button>
+
+        <!-- Chat Box -->
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <span>Chat with Us</span>
+                <button class="close-btn" onclick="toggleChat()">X</button>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="sendMessage(event)">
+        </div>
+    </section>
+
+    
+    <!-- link tap -->
+    <section class="content">
+        <p><a href="firstcard.html">Learn more about Run like a Girl</a></p>
+        <p><a href="secondcard.html">How to use our website</a></p>
+        <p><a href="../index.html">Back to Home</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>For inquiries, reach us at <a href="mailto:info@example.com">info@example.com</a></p>
+    </footer>
+
+    <script>
+        function toggleChat() {
+            var chatBox = document.getElementById("chatBox");
+            chatBox.style.display = chatBox.style.display === "block" ? "none" : "block";
+        }
+
+        function sendMessage(event) {
+            if (event.key === "Enter") {
+                var input = document.getElementById("chatInput");
+                var message = input.value.trim();
+                if (message !== "") {
+                    var chatMessages = document.getElementById("chatMessages");
+                    var msgElement = document.createElement("div");
+                    msgElement.className = "user-message";
+                    msgElement.textContent = message;
+                    chatMessages.appendChild(msgElement);
+                    input.value = "";
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+            }
+        }
+
+        
+    </script>
+
+</body>
+</html>
