@@ -85,7 +85,8 @@ header {
 
   #logo {
     center-image{
-        width: 150px;
+        width: 200px;
+        height: auto;
         display: block;
         margin: auto;
     
