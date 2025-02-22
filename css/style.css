@@ -84,10 +84,13 @@ header {
 
 
   #logo {
-    width: 150px;
-    display: block;
-    margin-right: 200px;
-
+    center-image{
+        width: 150px;
+        display: block;
+        margin: auto;
+    
+    }
+   
   }
   
 
